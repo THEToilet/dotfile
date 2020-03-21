@@ -11,15 +11,17 @@ set autoread
 set hidden
 " " 入力中のコマンドをステータスに表示する
 set showcmd
-"
+set ruler " vim最下層右側に、カーソルの位置を表示させる
+set number         " 行番号を表示する
+set laststatus=2   " ステータス行を常に表示
+set cmdheight=2    " メッセージ表示欄を2行確保
+set confirm "保存されていないファイルがあるときは終了前に保存確認
 "
 " " 見た目系
 " " 行番号を表示
 set number
 " " 現在の行を強調表示
 set cursorline
-" " 現在の行を強調表示（縦）
-set cursorcolumn
 " " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " " インデントはスマートインデント
@@ -63,3 +65,11 @@ set wrapscan
 set hlsearch
 " " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" 自動的に閉じ括弧を入力
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap < <><LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+
